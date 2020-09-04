@@ -21,18 +21,14 @@ def scrape():
 
     browser.visit(url)
 
-    time.sleep(2)
+    time.sleep(3)
 
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    results = soup.find_all('div', class_='content_title')
+    news_title = soup.find('li', class_='slide').find('div', class_="content_title").text
 
-    results_2 = soup.find_all('div', class_='article_teaser_body')
-
-    title = results.find('a').text
-
-    paragraph = results_2.text
+    news_paragraph = soup.find('li', class_='slide').find('div', class_='article_teaser_body').text
 
 
 
@@ -42,15 +38,13 @@ def scrape():
 
     browser.visit(image_url)
 
-    time.sleep(2)
-
     browser.click_link_by_partial_text('FULL IMAGE')
 
-    time.sleep(2)
+    time.sleep(1)
 
     browser.click_link_by_partial_text('more info')
 
-    time.sleep(2)
+    time.sleep(1)
 
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
@@ -73,13 +67,11 @@ def scrape():
 
     mars_df = tables[0]
 
-    mars_df.columns=['Measurment', 'Value']
+    mars_df.columns=['Measurement', 'Value']
 
-    html_table = mars_df.to_html()
+    mars_df.set_index('Measurement', inplace = True)
 
-    html_table.replace('\n', '')
-
-    mars_table = mars_df.to_html('Mars_Facts_Table.html')
+    mars_table = mars_df.to_html(classes="table table-striped")
 
 
 
@@ -88,8 +80,6 @@ def scrape():
     hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
 
     browser.visit(hemi_url)
-
-    time.sleep(2)
 
     html = browser.html
 
@@ -131,12 +121,11 @@ def scrape():
 
     mars_info = {
 
-        "news_title": title,
-        "news_paragraph": paragraph,
+        "news_title": news_title,
+        "news_paragraph": news_paragraph,
         "jpl_featured_image": featured_image_url,
         "mars_table": mars_table,
         "hemisphere_info": hemisphere_names
-
     }
 
     browser.quit()
