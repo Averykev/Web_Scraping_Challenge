@@ -44,6 +44,8 @@ Web Scraping Challenge
 
 	a.)  For this section I used bootstrap to pull in a jumbotron, cards, and different container sections in order to block off everything similar to the way it was 
 	done on the instructions for the challenge.  The main thing here is for the Mars Hemisphere titles and images I used a loop inside the HTML code using {%%}...since
-	the information was actually in a list of dictionaries...and then I filled in the titles and image urls with the cards from bootsrap.  
+	the information was actually in a list of dictionaries...and then I filled in the titles and image urls with the cards from bootsrap.  I changed some of the style of
+	this html code right on the index.html page as opposed to doing a style sheet.  I was really only changing font weight, borders, padding, and picture sizes so I decided
+	to do it right in the index.  
 
 

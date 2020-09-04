@@ -24,10 +24,9 @@ def home():
 @app.route("/scrape")
 def scrape():
 
-    # Run the scrape function and save the results to a variable
-    collection = mongo.db.collection    
+    # Run the scrape function, save results, and update Mongo database
 
-    # Update the Mongo database using update and upsert=True
+    collection = mongo.db.collection 
     mars_info = scrape_mars.scrape()
     mongo.db.collection.update({}, mars_info, upsert=True)
 
