@@ -48,4 +48,7 @@ Web Scraping Challenge
 	this html code right on the index.html page as opposed to doing a style sheet.  I was really only changing font weight, borders, padding, and picture sizes so I decided
 	to do it right in the index.  
 
+INSTRUCTIONS:  To view this project just make sure that you have a connection to MongoDB.  Then you can run the Jupyter notebooks, open the "app.py" file and run it in the terminal.
+Once you have the link to the page...you can click on the update button and it will run the entire application.
+
 
