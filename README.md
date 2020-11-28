@@ -37,7 +37,7 @@ Web Scraping Challenge
 	in order to make everything work...but the idea was generally the same.  I added a collection and it was ready to go. 
 
 	b.)  I set up a connection to mongo...created a "/" route and a "/scrape" route and then I rendered my index.html file so I could pass the information through 
-	that I needed to.  I set the variable for the data to "mars" which I then use on the index.html to pull all of the information over.
+	that I needed to.  I set the variable for the data to "mars" which I then use on the index.html to pull all of the information over. 
 
 
 4.)  MISSION TO MARS - INDEX.html
